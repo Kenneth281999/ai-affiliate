@@ -25,7 +25,7 @@ if not REPLICATE_API_TOKEN:
 if not ELEVENLABS_API_KEY:
     print('Warning: ELEVENLABS_API_KEY not set. Add it to .env before using ElevenLabs endpoints.')
 
-app = Flask(__name__, static_url_path='', static_folder='static')
+app = Flask(__name__, static_url_path='', static_folder='.')
 
 # Serve the index and static files
 @app.route('/')
