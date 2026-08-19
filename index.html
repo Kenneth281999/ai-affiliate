@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Tools Marketplace</title>
+  <meta name="description" content="Discover AI tools for video, image, writing, audio, code, and marketing. Mobile-first, fast, and affiliate-ready.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#">AI<span class="accent">Market</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#featured">Featured</a>
+        <a href="#video-generator">AI Video</a>
+        <a href="#why">Why Us</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="#about">About</a>
+      </nav>
+      <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Mag-bootstrap ng mga AI tools nang mabilis at kumikita</h1>
+          <p class="sub">Hanapin, subukan, at i-promote ang pinakamahusay na AI tools — video, image, writing, audio, code, at marketing. Affiliate-ready, mabilis mag-load.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#featured">Explore Tools</a>
+            <a class="btn btn-ghost" href="#video-generator">Try AI Video (New!)</a>
+          </div>
+          <div class="stats">
+            <div><strong>1,200+</strong><span>Tools</span></div>
+            <div><strong>95%</strong><span>Conversion</span></div>
+            <div><strong>Fast</strong><span>Mobile-ready</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="search-card glass">
+            <label for="search">Hanapin ang AI tools</label>
+            <input id="search" placeholder="Search tools, e.g., video generator" />
+            <div class="categories" id="categories">
+              <button class="chip" data-cat="all">All</button>
+              <button class="chip" data-cat="video">Video</button>
+              <button class="chip" data-cat="image">Image</button>
+              <button class="chip" data-cat="writing">Writing</button>
+              <button class="chip" data-cat="audio">Audio</button>
+              <button class="chip" data-cat="code">Code</button>
+              <button class="chip" data-cat="marketing">Marketing</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="container section">
+      <h2>Featured AI Tools</h2>
+      <div id="toolsGrid" class="grid">
+        <!-- Example cards; affiliate links use placeholder YOUR_AFFILIATE_LINK_HERE -->
+        <article class="card glass" data-cat="video">
+          <div class="card-head">
+            <div class="icon">🎬</div>
+            <div>
+              <h3>SuperVideo AI</h3>
+              <p class="muted">Text-to-video with style presets</p>
+            </div>
+          </div>
+          <p class="desc">Create short videos from text or images.</p>
+          <div class="card-foot">
+            <div class="price">From <strong>$9/mo</strong></div>
+            <div class="commission">Commission: <strong>30%</strong></div>
+            <a class="btn btn-sm" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener">Get 10% off</a>
+          </div>
+        </article>
+
+        <article class="card glass" data-cat="image">
+          <div class="card-head">
+            <div class="icon">🖼️</div>
+            <div>
+              <h3>ImageForge</h3>
+              <p class="muted">AI image generation</p>
+            </div>
+          </div>
+          <p class="desc">Fast image creation and upscaling.</p>
+          <div class="card-foot">
+            <div class="price">Free tier</div>
+            <div class="commission">Commission: <strong>20%</strong></div>
+            <a class="btn btn-sm" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener">Promote</a>
+          </div>
+        </article>
+
+        <article class="card glass" data-cat="writing">
+          <div class="card-head">
+            <div class="icon">✍️</div>
+            <div>
+              <h3>WriteRight</h3>
+              <p class="muted">AI copy & SEO assistant</p>
+            </div>
+          </div>
+          <p class="desc">Generate blog posts, ads, and more.</p>
+          <div class="card-foot">
+            <div class="price">From <strong>$7/mo</strong></div>
+            <div class="commission">Commission: <strong>25%</strong></div>
+            <a class="btn btn-sm" href="YOUR_AFFILIATE_LINK_HERE" target="_blank" rel="noopener">Join</a>
+          </div>
+        </article>
+
+        <!-- More cards can be added here -->
+      </div>
+    </section>
+
+    <section id="video-generator" class="container section">
+      <h2>AI Video Generator (NEW!)</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="image2video">🖼️ Image → Video</button>
+        <button class="tab" data-tab="text2video">✍️ Text → Video</button>
+        <button class="tab" data-tab="voice">🎤 AI Voice Narration</button>
+      </div>
+
+      <div class="tab-panels">
+        <div class="panel active" id="image2video">
+          <form id="imageForm">
+            <label>Upload Image (jpg/png)</label>
+            <input type="file" id="imageFile" accept="image/*" required />
+            <label>Prompt</label>
+            <input id="imagePrompt" placeholder="Describe the video style, motion, length..." required />
+            <div class="form-row">
+              <button class="btn btn-primary" type="submit">Generate Video</button>
+              <div id="imageProgress" class="progress" hidden>
+                <div class="bar"></div>
+                <div class="status">Starting...</div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel" id="text2video">
+          <form id="textForm">
+            <label>Prompt</label>
+            <textarea id="textPrompt" placeholder="Write the scene, camera movements, style..." required></textarea>
+            <div class="form-row">
+              <button class="btn btn-primary" type="submit">Generate Video</button>
+              <div id="textProgress" class="progress" hidden>
+                <div class="bar"></div>
+                <div class="status">Starting...</div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel" id="voice">
+          <form id="voiceForm">
+            <label>Choose Voice</label>
+            <select id="voiceSelect">
+              <option value="voice_1">Voice 1 (Sample)</option>
+              <option value="voice_2">Voice 2 (Sample)</option>
+            </select>
+            <label>Script</label>
+            <textarea id="voiceScript" placeholder="Type your narration script..." required></textarea>
+            <div class="form-row">
+              <button class="btn btn-primary" type="submit">Generate Voice</button>
+              <div id="voiceProgress" class="progress" hidden>
+                <div class="bar"></div>
+                <div class="status">Starting...</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="preview glass" id="preview">
+        <h3>Preview</h3>
+        <div id="mediaPreview">No preview yet</div>
+      </div>
+
+      <p class="muted small">Note: This demo uses backend proxy endpoints. Configure your Replicate/ElevenLabs API keys in the server .env file. See <code>.env.template</code> for placeholders.</p>
+    </section>
+
+    <section id="why" class="container section">
+      <h2>Why Choose Us</h2>
+      <div class="grid">
+        <div class="feature card glass">
+          <h4>Fast & Lightweight</h4>
+          <p>Built for speed with minimal dependencies for SEO-friendly delivery.</p>
+        </div>
+        <div class="feature card glass">
+          <h4>Affiliate-Ready</h4>
+          <p>Clear affiliate CTA templates and disclosures to keep you compliant.</p>
+        </div>
+        <div class="feature card glass">
+          <h4>Mobile-First</h4>
+          <p>Designed to look great on phones, tablets, and desktops.</p>
+        </div>
+        <div class="feature card glass">
+          <h4>Modern UI</h4>
+          <p>Glassmorphism, gradients, and smooth micro-interactions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="container section">
+      <h2>Newsletter</h2>
+      <form id="newsletterForm" class="glass">
+        <label for="email">Get updates and affiliate offers</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <section id="about" class="container section">
+      <h2>About & Affiliate Disclosure</h2>
+      <p>This site curates AI tools and includes affiliate links. When users purchase through these links the site may earn a commission. All affiliate links in the templates are placeholders (<code>YOUR_AFFILIATE_LINK_HERE</code>) — replace them with your actual affiliate URLs.</p>
+      <p class="muted small">Legal: Configure your own terms and privacy policy before using this for commercial purposes.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> AI Market — All rights reserved.</div>
+      <div class="socials">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
